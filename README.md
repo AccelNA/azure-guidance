@@ -1,2 +1,2 @@
 # azure-guidance
-Solution Architecture building large scale distributed Cloud apps on Azure.
+Solution Architecture for building large scale distributed Cloud apps on Azure.
