@@ -10,7 +10,7 @@ Solution Architecture for building large scale distributed Cloud apps on Azure.
 * Azure Notification Hub
 * Azure DocumentDB
 
-### Architecture 
+### Solution Architecture 
 
 ![alt tag](https://github.com/AccelNA/azure-guidance/blob/master/contents/azure-arch.JPG)
 
