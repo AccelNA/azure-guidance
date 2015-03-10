@@ -1,6 +1,8 @@
 # azure-guidance
 Solution Architecture for building large scale distributed Cloud apps on Azure.
 
+## Drop 1- Building Distribued Apps with Azure 
+
 ### Technologies:
 
 * Azure Cloud Services
