@@ -9,8 +9,6 @@ Solution Architecture for building large scale distributed Cloud apps on Azure.
 * Azure Service Bus Topic
 * Azure Notification Hub
 * Azure DocumentDB
-* Azure Web Sites
-* Azure WebJobs
 
 ### Architecture 
 
