@@ -21,6 +21,8 @@ Solution Architecture for building large scale distributed Cloud apps on Azure.
 2. Application logic should be deployed into multiple systems so that individual systems can separately scale-up and scale-down in Cloud.
 3. An order request from customer, should notify to multiple systems – including mobile apps.
 4. Cross platform mobile apps should be able to receive real-time push notifications from Cloud powered systems. 
+5. A RESTful API for working as backend for mobile apps.
+
 
 ### Solution Workflow
 
