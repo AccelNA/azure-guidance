@@ -1,7 +1,7 @@
 # azure-guidance
 Solution Architecture for building large scale distributed Cloud apps on Azure.
 
-## Drop 1- Building Distribued Apps with Azure 
+## Drop 1- Distribued Apps with Azure Cloud Services and Service Bus Topics
 
 ### Technologies:
 
@@ -23,4 +23,5 @@ Solution Architecture for building large scale distributed Cloud apps on Azure.
 3. A worker processor  running in a Azure worker role subscribes the message from Azure Service Bus Topic , then process the order and finally persist the data into a NoSQL Database – Azure DocumentDB.
 4. A notification hub hosted in Azure worker role subscribes the message from Azure Service Bus Topic, then send cross platform, real-time push notifications to mobile apps running in Android, iOS and Windows Phone.
 5. The web app hosted in Azure web role shows the status of orders which is processed in worker processor.
+6. Mobile apps are consuming REST API hosted in Azure web site.
 
