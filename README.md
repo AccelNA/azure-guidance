@@ -1,7 +1,7 @@
 # azure-guidance
 Solution Architecture for building large scale distributed Cloud apps on Azure.
 
-## Drop 1- Distribued Apps with Azure Cloud Services and Service Bus Topics
+## Drop 1- Distribued Apps with Azure Cloud Services and Service Bus Topic
 
 ### Technologies:
 
@@ -15,6 +15,12 @@ Solution Architecture for building large scale distributed Cloud apps on Azure.
 ### Solution Architecture 
 
 ![alt tag](https://github.com/AccelNA/azure-guidance/blob/master/contents/azure-arch.JPG)
+
+### Problem Domain
+1. Order processing app in a distributed computing environment.
+2. Application logic should be deployed into multiple systems so that individual systems can separately scale-up and scale-down in Cloud.
+3. An order request from customer, should notify to multiple systems – including mobile apps.
+4. Cross platform mobile apps should be able to receive real-time push notifications from Cloud powered systems. 
 
 ### Solution Workflow
 
