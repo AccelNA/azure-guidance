@@ -1,5 +1,5 @@
 # Guidance For Building Cloud Apps on Azure
-Solution Architecture for building large scale distributed Cloud apps on Azure.
+Solution Architecture for building large scale distributed Cloud apps On Azure.
 
 ## Drop 1- Distribued Apps with Azure Cloud Services and Service Bus Topic
 
