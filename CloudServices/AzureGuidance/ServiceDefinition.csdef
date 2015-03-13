@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="AzureCloudService2" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
+  <WorkerRole name="AzureGuidance.Notification" vmsize="Small">
+    <ConfigurationSettings>
+      <Setting name="Microsoft.ServiceBusTopics.ConnectionString" />
+      <Setting name="Microsoft.DocumentDB.AuthorizationKey" />
+      <Setting name="Microsoft.DocumentDB.StorageUrl" />
+      <Setting name="Microsoft.ServiceBusNotificationHub.ConnectionString" />
+    </ConfigurationSettings>
+  </WorkerRole>
+  <WebRole name="AzureGuidance.Web" vmsize="Small">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="Endpoint1" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+    </Endpoints>
+  </WebRole>
+  <WorkerRole name="AzureGuidance.Worker" vmsize="Small" />
+</ServiceDefinition>

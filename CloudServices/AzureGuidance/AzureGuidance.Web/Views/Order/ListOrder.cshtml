@@ -1,0 +1,61 @@
+﻿@model System.Collections.Generic.IEnumerable<AzureGuidance.Domain.Order>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<h2>Orders</h2>
+<style type="text/css">
+   table, th, td {
+   border: 1px solid black;
+   padding:4px;
+}
+
+</style>
+
+<div class="table-responsive">
+    
+    @using (Html.BeginForm())
+    {
+        <div>
+        <table id="dataTable" class="table table-bordered table-striped" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Select</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Total Due</th>
+                <th>Order Date</th>
+                <th>Order Status</th>
+                
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Ajax.ActionLink("View", "DisplayProductsOfOrder", "Order", new { id = item.OrderId }, new AjaxOptions (){
+                       UpdateTargetId = "ProductsOrderdDiv",
+                       InsertionMode = InsertionMode.Replace,
+                       HttpMethod = "GET" 
+                   })
+       </td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.EmailId</td>
+                    <td>@item.TotalDue</td>
+                    <td>@item.OrderDate</td>
+                    <td>@item.orderStatus</td>
+                    
+                </tr>
+            }
+
+        </table>
+
+
+        </div >
+    <div id=ProductsOrderdDiv>
+
+    </div>
+    }
+
+    </div>
+

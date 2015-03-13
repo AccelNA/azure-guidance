@@ -1,0 +1,86 @@
+﻿@model AzureGuidance.Domain.ProductOrder
+@{
+    ViewBag.Title = "DisplayProducts";
+}
+
+<h2>DisplayProducts</h2>
+
+<style type="text/css">
+    .edit-mode { color:red }
+    .edit-user{ color:blue}
+</style>
+<script type="text/javascript">
+    $(function () {
+        
+        var table = document.getElementById("dataTable");
+        for (var i = 0, row; row = table.rows[i]; i++) {           
+            row.cells[1].disabled = true;
+        }
+
+
+        $('.chkProduct').on('click', function () {
+            var tr = $(this).parents('tr:first');            
+            if (tr[0].cells[1].disabled == false)
+                tr[0].cells[1].disabled = true;
+            else
+                tr[0].cells[1].disabled = false;
+                
+        });
+    });
+</script>
+
+@*@{
+    AzureGuidance.Domain.Products p = new AzureGuidance.Domain.Products();
+}*@
+
+@using (Html.BeginForm("SubmitOrder", "Order", null, FormMethod.Post))
+{
+
+
+    <div id="divParent">
+        <table id="dataTable" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <th class="header-producttable-small">Select</th>
+                <th class="header-producttable-small">Quantity</th>
+                <th class="header-producttable">Product Name</th>
+                <th class="header-producttablel">Unit Price</th>
+            </tr>
+            @if (Model != null && Model.lstProducts.Count() > 0)
+            {
+                for (int i = 0; i < Model.lstProducts.Count(); i++)
+                {
+                    <tr style="border:1px solid black">
+                        <td class="chkProduct">@Html.CheckBoxFor(a => a.lstProducts[i].SelectProduct)</td>
+                        <td class="txtProductQuantity">@Html.TextBoxFor(a => a.lstProducts[i].ProductQuantity)</td>
+                        <td>@Model.lstProducts[i].ProductName</td>
+                        <td>@Html.TextBoxFor(a => a.lstProducts[i].UnitPrice, new { @readonly = true })</td>
+
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+        <div class="form-group">
+            <div>
+                Name
+                @* <input id="NameTextBox" type="text" name="CustomerName" />*@
+                @Html.TextBoxFor(a => a.order.CustomerName)
+            </div>
+
+        </div>
+        <div class="form-group">
+            Email
+            @*<input id="EmailTextBox" name="Email" type="text" />*@
+            @Html.TextBoxFor(a => a.order.EmailId)
+
+        </div>
+          <div class="form-group">
+        <input type="submit" value="Make Order" class="btn btn-default" />
+
+        </div>
+            @*<b>Name</b>  @p.ProductName<br />
+            <b>Price</b> @p.UnitPrice<br />*@
+
+
+   
+}

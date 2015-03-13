@@ -1,0 +1,66 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.txt
+{
+ width: 200px !important;
+}
+.form-control-dropdown{
+    width : 250px;
+}
+.btn-default
+{
+    width : 100px;
+}
+.webGrid { margin: 4px; border-collapse: collapse; width: 500px;  background-color:#FCFCFC;}
+.header { background-color: #C1D4E6; font-weight: bold; color: #FFF; }
+.webGrid th, 
+.webGrid td { border: 1px solid #C0C0C0; padding: 5px; }
+.alt { background-color: #E4E9F5; color: #000; }
+.gridHead a:hover {text-decoration:underline;}
+.description { width:auto}
+.select{background-color: #389DF5}
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}
+.form-control-txt {
+    width: 500px;
+}*/
+
+/*input,
+select,
+textarea {
+    width : 250px !important;
+    /*max-width: 280px;
+}*/
+.headertable
+{
+    background-color:#FFCCCC;
+    color:maroon;
+    width:120px;
+    
+}
+.header-producttable-small 
+{
+    background-color:#FFCCCC;
+    color:maroon;
+    width:70px;
+}

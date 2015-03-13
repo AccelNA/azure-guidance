@@ -1,0 +1,121 @@
+﻿@model AzureGuidance.Domain.ProductOrder
+@{
+    ViewBag.Title = "Make Order";
+}
+
+<h2>@*DisplayProducts*@</h2>
+
+<style type="text/css">
+    .edit-mode {
+        color: red;
+    }
+
+    .edit-user {
+        color: blue;
+    }
+</style>
+<style type="text/css">
+    table, th, td {
+        border: 1px solid black;
+        padding: 4px;
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        var response = '@ViewBag.SubmitResponse';
+        if (response != '')
+           alert(response);
+     })   
+
+    $(function () {
+
+        var table = document.getElementById("dataTable");
+        for (var i = 0, row; row = table.rows[i]; i++) {
+            row.cells[1].disabled = true;
+        }
+
+
+        $('.chkProduct').on('click', function () {
+            var tr = $(this).parents('tr:first');
+            if (tr[0].cells[1].disabled == false)
+                tr[0].cells[1].disabled = true;
+            else {
+                tr[0].cells[1].disabled = false;
+            }
+
+            //if ($(this).attr("checked")) {
+
+            //    $(this).parent().after(.next().children().removeAttr("disabled");
+            //}
+            //else {
+            //    $(this).parent().next().children().attr("disabled", "disabled");
+            //}
+
+        });
+    });
+</script>
+
+@*@{
+        AzureGuidance.Domain.Products p = new AzureGuidance.Domain.Products();
+    }*@
+
+@using (Html.BeginForm("SubmitOrder", "Order", null, FormMethod.Post))
+{
+
+
+    <div id="divParent" class="table-responsive">
+        <table id="dataTable" class="table table-bordered table-striped">
+            <tr>
+                <th>Select</th>
+                <th>Quantity</th>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+            </tr>
+            @if (Model != null && Model.lstProducts.Count() > 0)
+            {
+                for (int i = 0; i < Model.lstProducts.Count(); i++)
+                {
+                    <tr style="border:1px solid black; margin-top:50px; margin-bottom:50px;">
+                        <td class="chkProduct">@Html.CheckBoxFor(a => a.lstProducts[i].SelectProduct, new { @readonly = true })</td>
+
+                        <td class="txtProductQuantity">@Html.TextBoxFor(a => a.lstProducts[i].ProductQuantity)</td>
+                        <td>@Model.lstProducts[i].ProductName @Html.HiddenFor(a => a.lstProducts[i].ProductName)</td>
+                        <td>@Model.lstProducts[i].UnitPrice @Html.HiddenFor(a => a.lstProducts[i].UnitPrice)</td>
+                        @*<td>@Html.LabelFor(a => a.lstProducts[i].UnitPrice)</td>*@
+                        @*<td>@Html.TextBoxFor(a => a.lstProducts[i].ProductName, new { @readonly = true })</td>*@
+
+
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+    <div class="form-group" style="margin-top:10px">
+        <div>
+            Name
+            @* <input id="NameTextBox" type="text" name="CustomerName" />*@
+            @Html.TextBoxFor(a => a.order.CustomerName)
+        </div>
+
+    </div>
+    <div class="form-group">
+        Email
+        @*<input id="EmailTextBox" name="Email" type="text" />*@
+        @Html.TextBoxFor(a => a.order.EmailId)
+
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-1 col-md-push-3">
+            <input type="submit" value="Make Order" class="btn btn-default active" />
+        </div>
+
+    </div>
+    @*<b>Name</b>  @p.ProductName<br />
+        <b>Price</b> @p.UnitPrice<br />*@
+
+
+
+}
