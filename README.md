@@ -34,3 +34,12 @@ Solution Architecture for building large scale distributed Cloud apps On Azure.
 5. The web app hosted in Azure web role shows the status of orders which is processed in worker processor.
 6. Mobile apps are consuming REST API hosted in Azure web site.
 
+### Azure Services
+
+1. Web Role – Used for running web app for receiving orders from customers.
+2. Service Bus – Working as a message broker
+3. Worker Role – Background worker for receiving messages from Service Bus and processing the orders.
+4. Worker Role - Background worker for receiving messages from Service Bus and send real-time push notifications.
+5. Notification Hub – Sending cross platform push notifications.
+6. DocumentDB – NoSQL data store. 
+7. Web Sites – Used for running RESTful API.
