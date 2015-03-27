@@ -41,6 +41,7 @@ namespace AzureGuidance.Notification
                         Order orderDetails = receivedMessage.GetBody<Order>();
                         Order order = new Order();
                         order.CustomerName = orderDetails.CustomerName;
+                        order.OrderId = orderDetails.OrderId;
                         SendNotificationAsync(order);
                         // Remove message from subscription
                         receivedMessage.Complete();
@@ -117,10 +118,7 @@ namespace AzureGuidance.Notification
                     string connectionString = CloudConfigurationManager.GetSetting("Microsoft.ServiceBusTopics.ConnectionString");
                     // string connectionString = RoleEnvironment.GetConfigurationSettingValue("Microsoft.ServiceBusTopics.ConnectionString");
                     var namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
-                    if (!namespaceManager.TopicExists("OrderTopic"))
-                    {
-                        namespaceManager.CreateTopic("OrderTopic");
-                    }
+                   
                     if (!namespaceManager.SubscriptionExists("OrderTopic", "OrderMessagesForNotification"))
                     {
                         namespaceManager.CreateSubscription("OrderTopic", "OrderMessagesForNotification");
@@ -140,8 +138,9 @@ namespace AzureGuidance.Notification
         {
             try
             {
-                DateTime timeNow = DateTime.Now;             
-                string template = string.Format("{0:yyyy} {1} {2} {3} {4}", "{ \"data\" : {\"message\":\"Order: ", varOrder.OrderId, "by", varOrder.CustomerName, "\"}}");               
+                DateTime timeNow = DateTime.Now;
+                //string template = "{\"data\":{\"message\":\"Notification Hub test notification\"}}";
+                string template = string.Format("{0} {1} {2} {3} {4}", "{ \"data\" : {\"message\":\"Order: ", varOrder.OrderId, "by", varOrder.CustomerName, "\"}}");
                 NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("", "azureguidancehub");
                 var outcome = await hub.SendGcmNativeNotificationAsync(template/*, "mySampleTag"*/);
                

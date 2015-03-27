@@ -27,55 +27,6 @@ namespace AzureGuidance.Worker
         public override void Run()
         {
             Trace.TraceInformation("WorkerRole1 is running");
-            //BrokeredMessage receivedMessage = null;
-            //while (!IsStopped)
-            //{
-            //    try
-            //    {
-            //        // Receive the message
-
-            //        receivedMessage = SubClient.Receive();
-
-            //        if (receivedMessage != null)
-            //        {
-            //            Order orderDetails = receivedMessage.GetBody<Order>();
-            //            Order order = new Order();
-            //            order.CustomerName = orderDetails.CustomerName;
-            //            order.EmailId = orderDetails.EmailId;
-            //            order.ProductOrderDetailsList = orderDetails.ProductOrderDetailsList;
-            //            order.OrderDate = orderDetails.OrderDate;
-            //            order.TotalDue = orderDetails.TotalDue;
-            //            order.orderStatus = "Processed";
-            //            // Remove message from subscription
-            //            receivedMessage.Complete();
-            //            order.OrderId = Guid.NewGuid();
-            //            azureDocDBHelper.AddDocument(order, "OrderDetails");
-            //            receivedMessage = null;
-            //        }
-
-            //    }
-            //    catch (MessagingException e)
-            //    {
-            //        if (null != receivedMessage)
-            //        {
-            //            //unlock message in subscription
-            //            receivedMessage.Abandon();
-            //        }
-            //        if (!e.IsTransient)
-            //        {
-            //            Trace.WriteLine(e.Message);
-            //            throw;
-            //        }
-
-            //        Thread.Sleep(10000);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        // unlock message in subscription
-            //        receivedMessage.Abandon();
-            //        Trace.WriteLine(ex.Message);
-            //    }
-            //}
             RunAsync().Wait();
         }
         private async Task RunAsync()
@@ -171,10 +122,6 @@ namespace AzureGuidance.Worker
                     string connectionString = CloudConfigurationManager.GetSetting("Microsoft.ServiceBusTopics.ConnectionString");
                     // string connectionString = RoleEnvironment.GetConfigurationSettingValue("Microsoft.ServiceBusTopics.ConnectionString");
                     var namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
-                    if (!namespaceManager.TopicExists("OrderTopic"))
-                    {
-                        namespaceManager.CreateTopic("OrderTopic");
-                    }
                     if (!namespaceManager.SubscriptionExists("OrderTopic", "OrderMessagesForDocumentDB"))
                     {
                         namespaceManager.CreateSubscription("OrderTopic", "OrderMessagesForDocumentDB");
