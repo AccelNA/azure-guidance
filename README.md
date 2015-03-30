@@ -63,6 +63,7 @@ Solution Architecture for building large scale distributed Cloud apps On Azure.
 * Azure Service Bus Topic
 * Azure Notification Hub
 * Azure DocumentDB
+* Azure Redis Cache
 
 
 ### Solution Architecture 
