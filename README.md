@@ -3,11 +3,11 @@ Solution Architecture for building large scale distributed Cloud apps On Azure.
 
 ## Releases 
 
-#### Drop 1 - Distribued Apps with Azure Cloud Services and Service Bus Topic
+##### Drop 1 - Distribued Apps with Azure Cloud Services and Service Bus Topic
 
 [Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/CloudServices)
  
-#### Drop 2 - Distribued Apps with Azure Web Sites, WebJobs and Service Bus Topic
+##### Drop 2 - Distribued Apps with Azure Web Sites, WebJobs and Service Bus Topic
 
 [Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/WebSite)
 
