@@ -84,7 +84,7 @@ Solution Architecture for building large scale distributed Cloud apps On Azure.
 1. End user submits an order through a web app, which is hosted in Azure Web Site. The Web Site is also hosting two WebJobs: a WebJob for performing order processing logic and another WebJob for sending real-time mobile push notifications.
 2. The Azure Web Site publishes a message into Azure Service Bus Topic for the subscribers of the distributed systems environment.
 3. A WebJob running in a Azure Web Site subscribes the message from Azure Service Bus Topic , then process the order and finally persist the data into a NoSQL Database – Azure DocumentDB.
-4. A notification hub hosted running in a Azure Web Site subscribes the message from Azure Service Bus Topic, then send cross platform, real-time push notifications to mobile apps running in Android, iOS and Windows Phone.
+4. A notification hub hosted running in a WebJobs, subscribes the message from Azure Service Bus Topic, then send cross platform, real-time push notifications to mobile apps running in Android, iOS and Windows Phone.
 5. The web app hosted in Azure Web Site shows the status of orders which is processed in the WebJob which performs order processing logic.
 6. Mobile apps are consuming REST API hosted in Azure web site.
 
