@@ -14,7 +14,7 @@ Web and Worker roles to offload complex processing to async workers (using Worke
 * This is a cost effective solution of Drop 1 with WebJobs and limited scalability power.
 * This can be scale-up like Drop 1 if you could deploy WebJobs into individual Azure Web Apps.
 
-Azure Web App (formerly WebSites) and WebJobs to offload complex processing to async workers (using WebJobs) and synchronize and communicate various systems in a distributed environment. Azure Service Bus Topic is used as a message broker to synchronize between Azure WebSites and Azure WebJobs. Provides Publish/Subscribe implementation using Azure Service Bu Topic
+Azure Web App (formerly WebSites) and WebJobs to offload complex processing to async workers (using WebJobs) and synchronize and communicate various systems in a distributed environment. Azure Service Bus Topic is used as a message broker to synchronize between Azure WebSites and Azure WebJobs. Provides Publish/Subscribe implementation using Azure Service Bus Topic
 
 [Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/WebSite)
 
