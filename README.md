@@ -3,7 +3,7 @@ Solution Architecture for building large scale distributed Cloud apps On Azure.
 
 ## Releases 
 
-##### Drop 3 - [A Message Hub for IoT Scenarios with Azure Event Hub] (https://github.com/AccelNA/azure-guidance/blob/master/servicebus-cloudservices.md)
+##### Drop 3 - [A Message Hub for IoT Scenarios with Azure Event Hub] (https://github.com/AccelNA/azure-guidance/blob/master/IoTEventHub.md)
 
 A Message Hub for IoT Scenarios, for handling millions of messages and events in near real-time
 
