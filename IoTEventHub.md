@@ -19,7 +19,7 @@
 
 * [Android app] (https://github.com/AccelNA/azure-guidance/tree/master/EventHub/AndroidApps/IOTDevice) reperesenting automotive vehicles. 
 * [Android app] (https://github.com/AccelNA/azure-guidance/tree/master/EventHub/AndroidApps/EventHubSender) for receiving messages from IoT devices and sending it to IoT Message Hub.
-* A real-time web app for receiving messages from IoT Message Hub and providing real-time insight into the browser UI. 
+* [A real-time web app] (https://github.com/AccelNA/azure-guidance/tree/master/EventHub/RealTimeIOTTracker) for receiving messages from IoT Message Hub and providing real-time insight into the browser UI. 
 
 ### Solution Workflow
 
