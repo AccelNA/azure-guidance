@@ -12,8 +12,14 @@
 ![alt tag](https://github.com/AccelNA/azure-guidance/blob/master/contents/eventhub.JPG)
 
 ### Problem Domain
-1. Build a message hub for IoT scenarios for sending millions of messages and events to the cloud at massive scale, with low latency and high reliability.
+1. Build a message hub for IoT scenarios for sending millions of messages and events to the Cloud at massive scale, with low latency and high reliability.
 2. Process the massive amounts of messages and events in near real-time.
+
+### Apps in the Demo:
+
+* [Android app] (https://github.com/AccelNA/azure-guidance/tree/master/EventHub/AndroidApps/IOTDevice) reperesenting automotive vehicles. 
+* [Android app] (https://github.com/AccelNA/azure-guidance/tree/master/EventHub/AndroidApps/EventHubSender) for receiving messages from IoT devices and sending it to IoT Message Hub.
+* A real-time web app for receiving messages from IoT Message Hub and providing real-time insight into the browser UI. 
 
 ### Solution Workflow
 
