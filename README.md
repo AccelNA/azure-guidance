@@ -3,6 +3,12 @@ Solution Architecture for building large scale distributed Cloud apps On Azure.
 
 ## Releases 
 
+##### Drop 3 - [A Message Hub for IoT Scenarios with Azure Event Hub] (https://github.com/AccelNA/azure-guidance/blob/master/servicebus-cloudservices.md)
+
+A Message Hub for IoT Scenarios, for handling millions of messages and events in near real-time
+
+[Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/EventHub)
+
 ##### Drop 1 - [Distribued Apps with Azure Cloud Services and Service Bus Topic] (https://github.com/AccelNA/azure-guidance/blob/master/servicebus-cloudservices.md)
 
 Web and Worker roles to offload complex processing to async workers (using Worker Roles) and synchronize and communicate various systems in a distributed environment. Azure Service Bus Topic is used as a message broker to synchronize between Web Roles and Worker Roles.Provides Publish/Subscribe implementation using Azure Service Bu Topic
