@@ -8,12 +8,6 @@ Solution Architecture for building large scale distributed Cloud apps On Azure.
 A Message Hub for IoT Scenarios, for handling millions of messages and events in near real-time
 
 [Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/EventHub)
-
-##### Drop 1 - [Distribued Apps with Azure Cloud Services and Service Bus Topic] (https://github.com/AccelNA/azure-guidance/blob/master/servicebus-cloudservices.md)
-
-Web and Worker roles to offload complex processing to async workers (using Worker Roles) and synchronize and communicate various systems in a distributed environment. Azure Service Bus Topic is used as a message broker to synchronize between Web Roles and Worker Roles.Provides Publish/Subscribe implementation using Azure Service Bu Topic
-
-[Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/CloudServices)
  
 ##### Drop 2 - [Distribued Apps with Azure Web Sites, WebJobs and Service Bus Topic] (https://github.com/AccelNA/azure-guidance/blob/master/servicesbus-webapp.md)
 
@@ -23,4 +17,10 @@ Web and Worker roles to offload complex processing to async workers (using Worke
 Azure Web App (formerly WebSites) and WebJobs to offload complex processing to async workers (using WebJobs) and synchronize and communicate various systems in a distributed environment. Azure Service Bus Topic is used as a message broker to synchronize between Azure WebSites and Azure WebJobs. Provides Publish/Subscribe implementation using Azure Service Bus Topic
 
 [Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/WebSite)
+
+##### Drop 1 - [Distribued Apps with Azure Cloud Services and Service Bus Topic] (https://github.com/AccelNA/azure-guidance/blob/master/servicebus-cloudservices.md)
+
+Web and Worker roles to offload complex processing to async workers (using Worker Roles) and synchronize and communicate various systems in a distributed environment. Azure Service Bus Topic is used as a message broker to synchronize between Web Roles and Worker Roles.Provides Publish/Subscribe implementation using Azure Service Bu Topic
+
+[Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/CloudServices)
 
