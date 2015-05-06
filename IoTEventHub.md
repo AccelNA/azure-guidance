@@ -27,6 +27,8 @@
 2.	The Android app which receives the events from automotive vehicles, send the messages and events into IoT Message Hub.
 3.	A real-time web app running on Azure App Services Web App receives the events from IoT Message Hub and provide real-time insight on the data received.
 
+![alt tag](https://github.com/AccelNA/azure-guidance/blob/master/contents/IOTTracker-web-app.png)
+
 
 ### Azure Services
 
