@@ -13,7 +13,7 @@
 
 ### Solution Architecture 
 
-![alt tag](https://github.com/AccelNA/azure-guidance/blob/master/contents/azure-arch-appservices.JPG)
+![alt tag](https://github.com/AccelNA/azure-guidance/blob/master/contents/azure-servicebus-appservices.JPG)
 
 ### Problem Domain
 1. Order processing app in a distributed computing environment.
