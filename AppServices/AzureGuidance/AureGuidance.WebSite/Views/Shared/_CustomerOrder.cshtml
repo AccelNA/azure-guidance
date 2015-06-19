@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AzureGuidance.Domain.ProductDetails>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="table-responsive">
+        <table id="dataTable" class="table table-bordered table-striped">
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.ProductQuantity</td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+   
+

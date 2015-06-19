@@ -1,0 +1,98 @@
+﻿@model IEnumerable<AzureGuidance.Domain.Product>
+@{
+    ViewBag.Title = "Products";
+}
+@*<h2>Products</h2>*@
+
+<style type="text/css">
+    table, th, td {
+        border: 1px solid black;
+        padding: 4px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#AddProductButton').click(function () {
+            var productName = $("#ProductNameTextBox").val().trim();
+            var unitPrice = $("#UnitPriceTextBox").val().trim();
+            $.ajax({
+                url: "/Order/AddProduct",
+                contentType: 'application/html;charset=utf-8',
+                type: 'GET',
+                data:
+               {
+                   productName: productName,
+                   unitPrice: unitPrice
+
+               },
+                success: function (data) {
+                    
+                    var rowContent = '<tr id="tdlast" style="border:1px solid black; margin-top:50px; margin-bottom:50px;"><td id="td1">#name#</td><td id="td2">#pval#</td></tr>';
+                    var rowContent1 = rowContent.replace("#name#", $("#ProductNameTextBox").val());
+                    var rowContent2 = rowContent1.replace("#pval#", $("#UnitPriceTextBox").val());
+                    //document.getElementById("dataTable").insertRow(-1).innerHTML = rowContent2;
+                    $('#dataTable tr:last').after(rowContent2);
+
+
+                    //$('#dataTable tr:last').after('<tr id="tdlast" style="border:1px solid black; margin-top:50px; margin-bottom:50px;"><td id="td1">("#ProductNameTextBox").val().trim()</td><td id="td2">#pval#</td></tr>');
+                    //$("#dataTable tr:last #td1").replaceWith($("#ProductNameTextBox").val().trim());
+                    // $("#dataTable tr:last #td2").replaceWith($("#UnitPriceTextBox").val().trim());
+
+                    $("#ProductNameTextBox").val('');
+                    $("#UnitPriceTextBox").val('');
+
+                    alert('Product added');
+                },
+                error: function () {
+                    alert("something seems wrong");
+                }
+            })
+        });
+    })
+</script>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal" style="margin-top:10px">
+        <div class="form-group">
+
+            @Html.Label("Product Name", new { @class = "control-label col-md-2" })
+            @Html.TextBox("ProductNameTextBox", "", new { htmlAttributes = new { @class = "form-control" } })
+
+        </div>
+
+        <div class="form-group">
+            @*<label style="margin-right:28px">Unit Price</label>*@
+            <label class="control-label col-md-2">Unit Price</label>
+            @Html.TextBox("UnitPriceTextBox", "", new { htmlAttributes = new { @class = "form-control" } })
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-push-3">
+                <input id="AddProductButton" class="btn btn-default active" type="button" value="Add Product" />
+            </div>
+        </div>
+
+        <div style="margin-top:10px" class="table-responsive">
+            <table id="dataTable" class="table table-bordered table-striped">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Unit Price</th>
+                </tr>
+                @if (Model != null && Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr style="border:1px solid black; margin-top:50px; margin-bottom:50px;">
+                            <td>@item.ProductName</td>
+                            <td>@item.UnitPrice</td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+    </div>
+}
+
+
