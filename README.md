@@ -7,7 +7,7 @@ Solution Architecture for building distributed Cloud apps On Azure.
 
 Azure App Services Web App and WebJobs to offload complex processing to async workers (using WebJobs) and synchronize and communicate various systems in a distributed environment. Azure Service Bus Topic is used as a message broker to synchronize between Azure App Services Web App and Azure WebJobs. Provides Publish/Subscribe implementation using Azure Service Bus Topic.
 
-[Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/WebSite)
+[Source Code] (https://github.com/AccelNA/azure-guidance/tree/master/AppServices)
 
 ##### Drop 3 - [A Message Hub for IoT Scenarios with Azure Event Hub] (https://github.com/AccelNA/azure-guidance/blob/master/IoTEventHub.md)
 
