@@ -13,7 +13,7 @@
 
 ### Solution Architecture 
 
-![alt tag](https://github.com/AccelNA/azure-guidance/blob/master/contents/azure-arch-webjobs.JPG)
+![alt tag](https://github.com/AccelNA/azure-guidance/blob/master/contents/azure-arch-appservices.JPG)
 
 ### Problem Domain
 1. Order processing app in a distributed computing environment.
